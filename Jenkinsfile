@@ -8,7 +8,8 @@ pipeline {
             }            
             steps {
                 bat '''
-                mvn -version
+                cd terraform
+                terraform init
                 '''
             }
         }
