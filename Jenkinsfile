@@ -6,7 +6,7 @@ pipeline {
   
             steps {
                 bat '''
-                cd terraform
+                cds terraform
                 terraform init
                 '''
             }
