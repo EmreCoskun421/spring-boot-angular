@@ -6,8 +6,8 @@ pipeline {
   
             steps {
                 withCredentials([file(credentialsId: 'TF-PROVIDER', variable: 'TF')]) {
-                    echo "${env.TF}"
                     dir ('terraform') {
+                        bat 'use $FTF'
                         bat '''
                    
                         terraform init
