@@ -6,8 +6,9 @@ pipeline {
   
             steps {
                 withCredentials([file(credentialsId: 'TF-PROVIDER', variable: 'TF-PROVIDER')]) {
-                bat '''
                 echo "This is the directory of the secret file ${TF-PROVIDER}"
+    
+                bat '''
                 cd terraform
                 terraform init
                 terraform plan
