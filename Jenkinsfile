@@ -9,6 +9,7 @@ pipeline {
                 bat '''
                 cd terraform
                 terraform init
+                terraform plan
                 '''
             }
             }
