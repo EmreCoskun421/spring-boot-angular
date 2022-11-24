@@ -5,8 +5,8 @@ pipeline {
         stage('Hello') {
   
             steps {
-                withCredentials([file(credentialsId: 'TF-PROVIDER', variable: 'TF-PROVIDER')]) {
-                    echo "${env.TF-PROVIDER}"
+                withCredentials([file(credentialsId: 'TF-PROVIDER', variable: 'TF')]) {
+                    echo "${env.TF}"
                     dir ('terraform') {
                         bat '''
                    
