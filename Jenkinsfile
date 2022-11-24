@@ -7,12 +7,14 @@ pipeline {
             steps {
                 withCredentials([file(credentialsId: 'TF-PROVIDER', variable: 'TF-PROVIDER')]) {
                     echo "This is the directory of the secret file ${TF-PROVIDER}"
-    
-                    bat '''
-                    cd terraform
-                    terraform init
-                    terraform plan
-                    '''
+                    dir ('terraform') {
+                        bat "use $TF-PROVIDER"
+                        bat '''
+                   
+                        terraform init
+                        terraform plan
+                        '''
+                    }
             }
             }
         }
