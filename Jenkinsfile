@@ -10,7 +10,7 @@ pipeline {
 
 
                     dir ('terraform') {
-                        sh "rm -rf terraform/provider.tf"
+                     //   sh "rm -rf terraform/provider.tf"
                         sh " mv \"${provider.tf}\" \"provider.tf\" "
                         sh "ls && dir"
                         sh '''
