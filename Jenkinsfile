@@ -7,7 +7,7 @@ pipeline {
 
             steps {
                 withCredentials([ file(credentialsId: '	provider', variable: 'provider')]){
-                    sh "cp ${provider} /terraform"
+                    sh "cp ${provider} '/terraform/provider.tf'"
 
                     dir ('terraform') {
 
