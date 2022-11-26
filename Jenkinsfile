@@ -10,9 +10,9 @@ pipeline {
 
 
                     dir ('terraform') {
-                       // sh "rm -rf terraform/provider.tf"
-                       // sh " mv \"${provider}\" \"provider.tf\" "
-                      //  sh "ls && dir"
+                        sh "rm -rf terraform/provider.tf"
+                        sh " mv \"${provider.tf}\" \"provider.tf\" "
+                        sh "ls && dir"
                         sh '''
                         
                         terraform init -upgrade
