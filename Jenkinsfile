@@ -1,16 +1,16 @@
 pipeline {
     agent any
-    tools {
-        docker 
-    }    
+
 
     stages {
         stage('Hello') {
-            agent {
-                docker { image 'hashicorp/terraform:1.3.5' }
-            }  
+            // agent {
+            //     docker { image 'hashicorp/terraform:1.3.5' }
+            // }  
             steps {
-                
+                sh '''
+                sudo apt-get update
+                '''
               
                 dir ('terraform') {
                     sh '''
