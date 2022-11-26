@@ -7,8 +7,9 @@ pipeline {
 
             steps {
                 withCredentials([ file(credentialsId: '	provider', variable: 'provider')]){
+                    sh "rm -rf terraform/provider.tf"
+
                     sh " cp \"${provider}\" \"terraform/provider.tf\" "
-                    sh "cat terraform/provider.tf"
 
                     dir ('terraform') {
 
