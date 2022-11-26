@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Hello') {
              agent {
-                 docker { image 'hashicorp/terraform:1.3.5' }
+                 docker { image 'hashicorp/terraform' }
              }  
             steps {
 
