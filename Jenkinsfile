@@ -9,7 +9,7 @@ pipeline {
                 withCredentials([ file(credentialsId: '	provider', variable: 'provider')]){
               
                     dir ('terraform') {
-                        sh "cp ${provider} /provider.tf"
+                        sh "cp ${provider} /"
 
                         sh '''
                         terraform init -upgrade
