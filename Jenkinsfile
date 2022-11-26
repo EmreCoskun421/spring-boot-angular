@@ -6,17 +6,14 @@ pipeline {
         stage('Hello') {
 
             steps {
-                withCredentials([ file(credentialsId: '	provider', variable: 'provider')]){
+                withCredentials([string(credentialsId: 'client_secret', variable: 'client_secret')]) {
 
 
                     dir ('terraform') {
-                     //   sh "rm -rf terraform/provider.tf"
-                        sh " mv \"${provider.tf}\" \"provider.tf\" "
-                        sh "ls && dir"
                         sh '''
                         
                         terraform init -upgrade
-                        terraform plan
+                        terraform plan -var client_secret=$client_secret
                         '''
 
                     }
