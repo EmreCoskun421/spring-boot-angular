@@ -7,12 +7,12 @@ pipeline {
 
             steps {
                 withCredentials([ file(credentialsId: '	provider', variable: 'provider')]){
-                    sh " cp \"${provider}\" \"terraform/provider.tf\" "
 
 
                     dir ('terraform') {
 
                         sh '''
+                        cp \"${provider}\" \"terraform/provider.tf\"
                         terraform init -upgrade
                         terraform plan
                         '''
