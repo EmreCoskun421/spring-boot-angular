@@ -5,11 +5,9 @@ pipeline {
         stage('Hello') {
   
             steps {
-                withCredentials([file(credentialsId: 'TF-PROVIDER', variable: 'TF')]) {
+              
                     dir ('terraform') {
-                        bat 'use $FTF'
-                        bat '''
-                   
+                        sh '''
                         terraform init
                         terraform plan
                         '''
