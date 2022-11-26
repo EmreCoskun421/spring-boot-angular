@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh '''
                  apt-get update
-                 apt install apt-transport-https ca-certificates curl software-properties-common
+                 apt install apt-transport-https ca-certificates curl software-properties-common  -y
                 '''
               
                 dir ('terraform') {
