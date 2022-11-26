@@ -10,7 +10,7 @@ pipeline {
               
                 dir ('terraform') {
                     sh '''
-                    terraform init
+                    terraform init -upgrade
                     terraform plan
                     '''
                 }
