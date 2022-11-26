@@ -6,14 +6,14 @@ pipeline {
   
             steps {
               
-                    dir ('terraform') {
-                        sh '''
-                        terraform init
-                        terraform plan
-                        '''
-                    }
+                dir ('terraform') {
+                    sh '''
+                    terraform init
+                    terraform plan
+                    '''
+                }
             }
             }
         }
-    }
+    
 }
