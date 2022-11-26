@@ -9,7 +9,7 @@ pipeline {
             // }  
             steps {
                 sh '''
-                sudo apt-get update
+                 apt-get update
                 '''
               
                 dir ('terraform') {
