@@ -1,7 +1,7 @@
 locals {
   ressource_name= "emre-terraform"
   location= "West Europe"
-  registry_name= "registry-emre-techstarter"
+  registry_name= "registryEmreTechstarter"
 }
 resource "azurerm_resource_group" "ressource_group" {
   name     = local.ressource_name
@@ -11,7 +11,7 @@ resource "azurerm_resource_group" "ressource_group" {
 resource "azurerm_container_registry" "acr" {
   name                =  local.registry_name
   resource_group_name =  local.ressource_name
-  location            =    local.location
+  location            =  local.location
   sku                 = "Basic"
   admin_enabled       = true
 }
