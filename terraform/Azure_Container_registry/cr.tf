@@ -1,5 +1,5 @@
 locals {
-  ressource_name= "emre-terraform"
+  ressource_name= "emre-terraform-images"
   location= "West Europe"
   registry_name= "registryEmreTechstarterimages"
 }
