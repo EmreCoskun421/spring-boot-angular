@@ -109,7 +109,20 @@ pipeline {
             }       
 
 
+       stage('Backend Push') {
 
+            steps {
+             
+               
+
+                dir ('server') {
+                    sh '''
+                    docker login registryemretechstarter.azurecr.io  -u registryEmreTechstarter -p  8K0Kvree5M2QK9BUSc7pXyPbxupH/lCM
+                    '''
+                    }
+                       
+            }
+            }     
 
 
 
