@@ -25,17 +25,19 @@ pipeline {
 
             steps {
              
+                withCredentials([string(credentialsId: 'sudopass', variable: 'sudopass')]) {
 
 
-                dir ('Ansible') {
-                    sh '''
-                        
-                   ansible --version
-                   ansible-playbook  tools.yaml -e "ansible_become_password=Kirotiro421!"
-                    '''
+                    dir ('Ansible') {
+                        sh '''
+                            
+                    ansible --version
+                    ansible-playbook  tools.yaml -e "ansible_become_password=$"
+                        '''
 
-                    }
-                }
+                        }
+                }        
+            }
             }            
 
 
