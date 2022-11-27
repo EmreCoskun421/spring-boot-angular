@@ -14,4 +14,7 @@ resource "azurerm_container_registry" "acr" {
   location            =  local.location
   sku                 = "Basic"
   admin_enabled       = true
-}
+  depends_on = [
+    azurerm_resource_group.ressource_group
+  ]
+} 
