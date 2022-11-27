@@ -3,7 +3,7 @@ pipeline {
 
 
     stages {
-        stage('Hello') {
+        stage('Cloud Setup') {
 
             steps {
                 withCredentials([string(credentialsId: 'client_secret', variable: 'client_secret')]) {
@@ -22,5 +22,23 @@ pipeline {
             }
             }
         }
-    
+   stages {
+        stage('WM Setup') {
+
+            steps {
+             
+
+
+                dir ('Ansible') {
+                    sh '''
+                        
+                   ansible --version
+
+                    '''
+
+                    }
+                }
+            }
+         
+        }    
 }

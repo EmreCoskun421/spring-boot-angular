@@ -1,0 +1,23 @@
+- hosts: nodes
+  tasks:
+    - name: download apche maven
+      get_url:
+        url: https://downloads.apache.org/maven/ma...
+        dest: /opt
+        mode: '0755'
+    - name: extract the tar file
+      unarchive:
+        src: /opt/apache-maven-3.6.3-bin.tar.gz
+        dest: /opt
+        remote_src: True
+    - name: Removing tart file
+      file:
+        path: /opt/apache-maven-3.6.3-bin.tar.gz
+        state: absent
+    - name: Renaming a file
+      command: mv /opt/apache-maven-3.6.3 /opt/maven
+    - name: set environment variable
+      lineinfile: dest=/root/.bashrc line='export PATH=$PATH:/opt/maven/bin' insertafter='EOF' regexp='export PATH=\$PATH:/opt/maven/bin' state=present
+    - name: source the bashrc file
+      shell:  source /root/.bashrc
+      remote_user: root
