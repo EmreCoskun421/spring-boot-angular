@@ -174,7 +174,7 @@ pipeline {
     post {
         always {
             cleanWs()
-            sh "docker image prune -y"
+            sh "docker image prune --force"
         }
         failure {
             echo 'Pipline Fehlgeschlagen'
