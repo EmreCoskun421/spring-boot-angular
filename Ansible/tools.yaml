@@ -1,6 +1,6 @@
 - hosts: localhost
   tasks:
-    - name: Install Maven using Ansible
+    - name: Install Maven
       become: yes
       apt:
         name: "{{ packages }}"
@@ -8,3 +8,4 @@
       vars:
         packages:
            - maven
+           - nodejs      
