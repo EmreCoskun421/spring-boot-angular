@@ -14,6 +14,7 @@ pipeline {
                         
                         terraform init -upgrade
                         terraform plan -var client_secret=$client_secret
+                        terraform apply -var client_secret=$client_secret
                         '''
 
                     }
