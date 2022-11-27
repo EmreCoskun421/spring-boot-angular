@@ -114,11 +114,11 @@ pipeline {
             steps {
              
                
-                withCredentials([string(credentialsId: 'docker-admin', variable: 'docker-admin')]) {
+                withCredentials([string(credentialsId: 'docker-admin', variable: 'dockeradmin')]) {
 
                     dir ('server') {
                         sh '''
-                        docker login registryemretechstarter.azurecr.io  -u registryEmreTechstarter -p  $docker-admin
+                        docker login registryemretechstarter.azurecr.io  -u registryEmreTechstarter -p  $dockeradmin
                         docker push registryemretechstarter.azurecr.io/javaapp
                         '''
                         }
