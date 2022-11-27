@@ -40,7 +40,22 @@ pipeline {
             }
             }            
 
+        stage('Backend Package') {
 
+            steps {
+             
+               
+
+                dir ('server') {
+                    sh '''
+                        
+                    mvn clean package
+                    '''
+
+                    }
+                       
+            }
+            }       
 
 
 
