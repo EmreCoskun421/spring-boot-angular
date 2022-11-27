@@ -31,7 +31,7 @@ pipeline {
                     sh '''
                         
                    ansible --version
-                   ansible-playbook  tools.yaml -e "Kirotiro421!"
+                   ansible-playbook  tools.yaml -e "ansible_become_password=Kirotiro421!"
                     '''
 
                     }
