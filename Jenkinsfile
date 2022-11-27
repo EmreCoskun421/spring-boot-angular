@@ -21,6 +21,7 @@ pipeline {
                 }
             }
             }
+            /*
         stage('WM Setup') {
 
             steps {
@@ -89,7 +90,7 @@ pipeline {
                     }
                        
             }
-            }     
+        }     
 
         stage('Frontend Build') {
 
@@ -165,15 +166,15 @@ pipeline {
                        
             }
             }     
-
+*/
 
 
 
         }
-
+/*
     post {
         always {
-            cleanWs()
+
             sh "docker image prune --force"
         }
         failure {
@@ -184,5 +185,5 @@ pipeline {
         }                   
     }    
          
-           
+           */
 }
