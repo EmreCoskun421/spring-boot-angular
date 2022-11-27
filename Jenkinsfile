@@ -31,12 +31,28 @@ pipeline {
                     sh '''
                         
                    ansible --version
-
+                   ansible-playbook  tools.yaml
                     '''
 
                     }
                 }
             }            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
 
