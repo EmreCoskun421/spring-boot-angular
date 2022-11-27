@@ -173,9 +173,15 @@ pipeline {
 
     post {
         always {
-            echo 'One way or another, I have finished'
-
-        }   
+            cleanWs()
+            sh "docker image prune"
+        }
+        failure {
+            echo 'Pipline Fehlgeschlagen'
+        }
+        success {
+            echo 'Pipline erfolgreich'
+        }                   
     }    
          
            
