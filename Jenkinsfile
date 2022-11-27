@@ -68,9 +68,6 @@ pipeline {
                         
                     npm install 
                     npm run build
-                    cd dist
-                    ls
-                    dir
                     '''
 
                     }
@@ -78,9 +75,37 @@ pipeline {
             }
             }       
 
+        stage('Backend Build') {
 
+            steps {
+             
+               
 
+                dir ('server') {
+                    sh '''
+                    docker build . -t registryemretechstarter.azurecr.io/javaapp
+                    '''
 
+                    }
+                       
+            }
+            }     
+
+        stage('Frontend Build') {
+
+            steps {
+             
+               
+
+                dir ('client') {
+                    sh '''
+                    docker build . -t registryemretechstarter.azurecr.io/angularapp
+                    '''
+
+                    }
+                       
+            }
+            }       
 
 
 
