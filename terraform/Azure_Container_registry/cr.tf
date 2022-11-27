@@ -1,7 +1,7 @@
 locals {
   ressource_name= "emre-terraform"
   location= "West Europe"
-  registry_name= "registryEmreTechstarter"
+  registry_name= "registryEmreTechstarterimages"
 }
 resource "azurerm_resource_group" "ressource_group" {
   name     = local.ressource_name
