@@ -68,6 +68,9 @@ pipeline {
                         
                     npm install 
                     npm run build
+                    cd dist
+                    ls
+                    dir
                     '''
 
                     }
