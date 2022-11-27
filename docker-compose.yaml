@@ -8,6 +8,8 @@ services:
   angularapp: 
     image: registryemretechstarter.azurecr.io/angularapp
     container_name: angularapp
+    ports:
+      -  "80"
 
 
       

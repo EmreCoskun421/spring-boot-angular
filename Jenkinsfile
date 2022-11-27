@@ -157,7 +157,7 @@ pipeline {
                    
                     sh '''
                         docker login registryemretechstarter.azurecr.io  -u registryEmreTechstarter -p  $dockeradmin
-                        docker-compose up 
+                        docker-compose up -d
                     '''
 
                         
@@ -171,7 +171,12 @@ pipeline {
 
         }
 
+    post {
+        always {
+            echo 'One way or another, I have finished'
 
+        }   
+    }    
          
            
 }
