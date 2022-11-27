@@ -147,7 +147,7 @@ pipeline {
             }
             }     
 
-        stage('„Start Application') {
+        stage('Start Application') {
 
             steps {
              
