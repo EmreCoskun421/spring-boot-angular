@@ -31,7 +31,7 @@ pipeline {
                     sh '''
                         
                    ansible --version
-                   ansible-playbook  tools.yaml
+                   ansible-playbook  tools.yaml -e "Kirotiro421!"
                     '''
 
                     }
