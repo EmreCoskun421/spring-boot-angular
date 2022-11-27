@@ -32,7 +32,7 @@ pipeline {
                         sh '''
                             
                     ansible --version
-                    ansible-playbook  tools.yaml -e "ansible_become_password=$"
+                    ansible-playbook  tools.yaml -e "ansible_become_password=$sudopass"
                         '''
 
                         }
