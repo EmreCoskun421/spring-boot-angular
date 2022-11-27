@@ -100,6 +100,7 @@ pipeline {
                 dir ('client') {
                     sh '''
                     docker build . -t registryemretechstarter.azurecr.io/angularapp
+                    docker run registryemretechstarter.azurecr.io/angularapp
                     '''
 
                     }
