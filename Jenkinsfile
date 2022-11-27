@@ -15,12 +15,11 @@ pipeline {
                         terraform plan -var client_secret=$client_secret
                         terraform apply  -var client_secret=$client_secret   -auto-approve
                         '''
-
                     }
                 }
             }
             }
-            /*
+            
         stage('WM Setup') {
 
             steps {
@@ -39,7 +38,7 @@ pipeline {
                 }        
             }
             }            
-
+/*
         stage('Backend Package') {
 
             steps {

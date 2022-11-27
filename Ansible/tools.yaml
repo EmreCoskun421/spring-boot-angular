@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+    - name: Install Maven
+      become: yes
+      apt:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+           - maven
+           - nodejs
+           - npm      
