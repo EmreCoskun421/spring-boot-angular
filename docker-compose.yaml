@@ -1,42 +1,13 @@
 version: '3.8'
-volumes:
-  data:
-    name: jenkins-data
-  certs:
-    name: jenkins-docker-cert
-networks:
-  jenkins-network:
-    name: jenkins
+
+
 services:
-  terraform:
-    image: hashicorp/terraform
-    container_name: terraform
-  docker: 
-    image: docker:dind
-    container_name: jenkins-docker
-    privileged: true
-    restart: unless-stopped
-    networks:
-      jenkins-network:
-        aliases:
-          - docker
-    volumes:
-      - data:/var/jenkins_home
-      - certs:/certs/client
+  javaapp:
+    image: registryemretechstarter.azurecr.io/javaapp
+    container_name: javaapp
+  angularapp: 
+    image: registryemretechstarter.azurecr.io/angularapp
+    container_name: angularapp
+
+
       
-  jenkins:
-  
-    image: jenkins/jenkins:lts
-    privileged: true
-    user: root
-    ports:
-      - 8080:8080
-      - 50000:50000
-    container_name: jenkins
-    volumes:
-      - data:/var/jenkins_home
-      - certs:/certs/client:ro
-    environment:
-      - DOCKER_HOST=tcp://docker:2376
-      - DOCKER_CERT_PATH=/certs/client
-      - DOCKER_TLS_VERIFY=1

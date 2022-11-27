@@ -147,7 +147,24 @@ pipeline {
             }
             }     
 
+        stage('„Start Application') {
 
+            steps {
+             
+               
+                withCredentials([string(credentialsId: 'docker-admin', variable: 'dockeradmin')]) {
+
+                   
+                    sh '''
+                        docker login registryemretechstarter.azurecr.io  -u registryEmreTechstarter -p  $dockeradmin
+                        docker-compose up 
+                    '''
+
+                        
+                }    
+                       
+            }
+            }     
 
 
 
