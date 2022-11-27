@@ -1,6 +1,6 @@
 - hosts: localhost
   tasks:
-    - name: Install Maven
+    - name: Install packages 
       become: yes
       apt:
         name: "{{ packages }}"

@@ -38,7 +38,7 @@ pipeline {
                 }        
             }
             }            
-/*
+
         stage('Backend Package') {
 
             steps {
@@ -73,7 +73,7 @@ pipeline {
                        
             }
             }       
-
+/*
         stage('Backend Build') {
 
             steps {
