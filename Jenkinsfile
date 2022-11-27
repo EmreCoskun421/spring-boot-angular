@@ -22,7 +22,7 @@ pipeline {
             }
             }
         }
-   stages {
+
         stage('WM Setup') {
 
             steps {
@@ -40,5 +40,5 @@ pipeline {
                 }
             }
          
-        }    
+           
 }
