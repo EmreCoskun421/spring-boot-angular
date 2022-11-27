@@ -128,7 +128,7 @@ pipeline {
             }     
 
 
-        stage('Frontend Build') {
+        stage('Frontend Push') {
 
             steps {
              
