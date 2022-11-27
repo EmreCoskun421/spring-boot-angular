@@ -57,7 +57,22 @@ pipeline {
             }
             }       
 
+        stage('Frontend Package') {
 
+            steps {
+             
+               
+
+                dir ('client') {
+                    sh '''
+                        
+                    npm install
+                    '''
+
+                    }
+                       
+            }
+            }       
 
 
 
