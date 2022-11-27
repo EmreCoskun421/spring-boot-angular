@@ -122,6 +122,7 @@ pipeline {
                         docker push registryemretechstarter.azurecr.io/javaapp
                         '''
                         }
+                }        
                        
             }
             }     
