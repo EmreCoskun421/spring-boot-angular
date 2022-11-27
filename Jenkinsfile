@@ -127,7 +127,24 @@ pipeline {
             }
             }     
 
+        stage('Frontend Build') {
 
+            steps {
+             
+               
+                withCredentials([string(credentialsId: 'docker-admin', variable: 'dockeradmin')]) {
+
+                dir ('client') {
+                    sh '''
+                        docker login registryemretechstarter.azurecr.io  -u registryEmreTechstarter -p  $dockeradmin
+                        docker push registryemretechstarter.azurecr.io/angularapp
+                    '''
+
+                    }
+                }    
+                       
+            }
+            }     
 
 
 
