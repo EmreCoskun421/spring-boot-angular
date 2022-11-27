@@ -1,7 +1,7 @@
 locals {
-  ressource_name= "emre-terraform-images"
+  ressource_name= "emre-terraform-images2"
   location= "West Europe"
-  registry_name= "registryEmreTechstarterimages"
+  registry_name= "registryEmreTechstarterimages2"
 }
 resource "azurerm_resource_group" "ressource_group" {
   name     = local.ressource_name
